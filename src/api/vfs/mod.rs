@@ -56,7 +56,7 @@ pub type VfsIndex = u8;
 pub struct VfsInode(u64);
 
 /// Vfs error definition
-#[derive(Debug)]
+#[derive(Debug, ThisError)]
 pub enum VfsError {
     /// Operation not supported
     Unsupported,
