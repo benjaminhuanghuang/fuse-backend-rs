@@ -60,18 +60,25 @@ pub struct VfsInode(u64);
 #[derive(Debug, ThisError)]
 pub enum VfsError {
     /// Operation not supported
+    #[error("Operation not supported.")]
     Unsupported,
     /// Mount backend filesystem
+    #[error("Mount backend filesystem.")]
     Mount(Error),
     /// Illegal inode index is used
+    #[error("Illegal inode index is used.")]
     InodeIndex(String),
     /// Filesystem index related. For example, an index can't be allocated.
+    #[error("Filesystem index related. For example, an index can't be allocated.")] 
     FsIndex(Error),
     /// Error happened when walking path
+    #[error("Error happened when walking path.")] 
     PathWalk(Error),
     /// Entry can't be found
+    #[error("Entry can't be found.")] 
     NotFound(String),
     /// File system can't ba initialized
+    #[error("File system can't ba initialized.")] 
     Initialize(String),
 }
 
