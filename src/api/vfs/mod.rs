@@ -31,6 +31,7 @@ use super::pseudo_fs::PseudoFs;
 use crate::abi::linux_abi::*;
 use crate::api::filesystem::*;
 use crate::async_util::AsyncDrive;
+use thiserror::Error as ThisError;
 
 #[cfg(feature = "async-io")]
 mod async_io;
